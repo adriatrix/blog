@@ -25,4 +25,12 @@ Route::get('/about', function () {
 //     return view('articles/articles_list', compact('article1','article2'));
 // });
 
-Route::get('/articles', 'ArticleCOntroller@showArticles');
+Route::get('/articles', 'ArticleController@showArticles');
+
+Route::get('/articles/create', 'ArticleController@createForm');
+
+Route::get('/articles/{id}', 'ArticleController@show');
+
+Route::post('/articles/create', 'ArticleController@create');
+
+Route::delete('/articles/{id}/delete', 'ArticleController@delete');
