@@ -33,4 +33,6 @@ Route::get('/articles/{id}', 'ArticleController@show');
 
 Route::post('/articles/create', 'ArticleController@create');
 
+Route::post('/articles/{id}/edit', 'ArticleController@edit');
+
 Route::delete('/articles/{id}/delete', 'ArticleController@delete');

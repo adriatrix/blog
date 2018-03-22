@@ -6,6 +6,11 @@
 
 @section('main_content')
 
+  @if(Session::has('create_article_success'))
+    {{ Session::get('create_article_success')}}
+  @endif
+
+  <a class="button is-primary"href='{{url("/articles/create")}}'>Create</a>
 
   <ul>
     @foreach($articles as $article)

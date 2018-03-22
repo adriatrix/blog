@@ -6,6 +6,15 @@
 
 @section('main_content')
 
+  @if (count($errors) > 0)
+    <ul>
+      @foreach ($errors->all() as $error)
+        <li>{{$error}}</li>
+      @endforeach
+    </ul>
+  @endif
+
+
   <form class="" action="{{url("/articles/create")}}" method="post">
     {{ csrf_field() }}
     <fieldset>
@@ -15,7 +24,7 @@
       <label for="content">Content:</label><br>
       <textarea name="content" rows="4" cols="18"></textarea><br>
 
-      <input type="submit" name="submit" value="Create">
+      <input class="button is-link" type="submit" name="submit" value="Create">
     </fieldset>
   </form>
 
